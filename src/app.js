@@ -1,5 +1,5 @@
 import express from "express";
-import './config/passport.js'; // This sets up the passport strategy
+import './config/passport.js';
 
 const app = express();
 

@@ -29,6 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 });
 
+
 const loginUser = asyncHandler(async (req, res) => {
   const { user_name, password } = req.body;
 
@@ -48,7 +49,7 @@ const loginUser = asyncHandler(async (req, res) => {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  const token = generateToken(user._id); // ✅ Generate JWT
+  const token = generateToken(user._id);
 
   return res.status(200).json({
     message: "Login successful",
@@ -60,8 +61,13 @@ const loginUser = asyncHandler(async (req, res) => {
   });
 });
 
+const dashboardUser = asyncHandler( async (rq, res) =>{
+  res.send("This is dashboad page")
+})
+
 export {loginUser};
 export { registerUser };
+export {dashboardUser}
 
 
 
